@@ -30,7 +30,7 @@ add_theme_support('wp-block-styles');
 add_theme_support('post-thumbnails');
 
 $defaults = array(
-	'width'                  => 1000,
+	'width'                  => 2000,
 	'height'                 => 500,
 	'flex-height'            => false,
 	'flex-width'             => false,

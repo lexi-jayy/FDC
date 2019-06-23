@@ -10,7 +10,7 @@
     <body <?php body_class(); ?> >
         <!-- <p>This is from header.php</p> -->
         <div class="container-fluid p-0">
-            <nav class="navbar navbar-expand-md navbar-light" role="navigation">
+            <nav class="navbar navbar-expand-md navbar-light custom_nav" role="navigation">
               <div class="container-fluid">
             	<!-- Brand and toggle get grouped for better mobile display -->
             	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,6 +31,8 @@
             		?>
             	</div>
             </nav>
-            <header> 
-            <img src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
+            <header id="header">
+			<div>
+            <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+			</div>
             </header>

@@ -6,6 +6,12 @@
 
 
   #header {
-    height: 500px;
-    width: 200px;
+
+  }
+
+
+
+  .custom-footer{
+    padding-left: 30%;
+    padding-right: 30%;
   }

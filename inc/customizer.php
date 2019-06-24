@@ -92,7 +92,7 @@ function mytheme_customize_css()
          <style type="text/css">
              body {
                  background-color: <?php echo get_theme_mod('custom_background_colour', '#000000'); ?>;
-                 color: <?php echo get_theme_mod('custom_text_settings', '#ffffff'); ?>;
+                 color: <?php echo get_theme_mod('custom_text_settings', '#000000'); ?>;
              }
              .custom_nav{
                  background-color: <?php echo get_theme_mod('navigation_background', '#ffffff'); ?>;

@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('full'); ?>
 
 <h1>This is from our page.php file</h1>
 

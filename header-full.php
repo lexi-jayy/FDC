@@ -16,7 +16,7 @@
             	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
             		<span class="navbar-toggler-icon"></span>
             	</button>
-            	<a class="navbar-brand" href="#">Navbar</a>
+            	<a class="navbar-brand" href="front-page.php">Home</a>
             		<?php
             		wp_nav_menu( array(
             			'theme_location'    => 'header_menu',
@@ -33,6 +33,6 @@
             </nav>
             <header id="header">
 			<div>
-            <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+            <img src="<?php header_image(); ?>"  alt="" class="img-fluid"/>
 			</div>
             </header>

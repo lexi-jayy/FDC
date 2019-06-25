@@ -29,11 +29,11 @@ function add_services_post_type(){
         'show_in_nav_menus' => false,
         'menu_position' => 6,
         'menu_icon' => 'dashicons-filter',
-        'supports' => array('title', 'thumbnail', 'editor')
+        'supports' => array('title', 'thumbnail', 'editor', 'post-formats')
     );
 
 
-    register_post_type('service', $args);
+    register_post_type('Services', $args);
 }
 
 add_action('init', 'add_services_post_type');

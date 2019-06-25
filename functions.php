@@ -13,6 +13,25 @@ function add_custom_files(){
 add_action('wp_enqueue_scripts', 'add_custom_files');
 
 
+function add_admin_styles(){
+    wp_enqueue_style('my_admin_styles', get_template_directory_uri() . '/assets/css/admin.css' , array(), '0.1');
+
+    $screen = get_current_screen();
+
+    if($screen->post_type === 'post' && ($screen->action === 'add' || $_GET['action'] === 'edit')){
+        wp_enqueue_script('change_post_formats_script', get_template_directory_uri() . '/assets/js/change_post_formats.js', array('jquery'), '0.1', true);
+
+        $format = get_post_format($_GET['post']);
+
+        wp_localize_script('change_post_formats_script', 'formatObject', array(
+            'format' => $format
+        ));
+    }
+
+    // wp_enqueue_script('addNewMediaScript', get_template_directory_uri() . '/assets/js/adminMedia.js', array('jquery'), '0.1', true);
+}
+add_action('admin_enqueue_scripts', 'add_admin_styles');
+
 function register_my_menu() {
     register_nav_menu('header_menu','The menu which appears at the top of the page');
     register_nav_menu('footer_menu','The menu which appears at the bottom of the page');
@@ -28,18 +47,13 @@ require_once get_template_directory() . '/assets/class-wp-bootstrap-navwalker.ph
 add_theme_support('wp-block-styles');
 
 add_theme_support('post-thumbnails');
-
-$defaults = array(
-	'width'                  => 2000,
-	'height'                 => 500,
-	'flex-height'            => false,
-	'flex-width'             => false,
-	'uploads'                => true,
-);
-add_theme_support( 'custom-header', $defaults );
+add_theme_support( 'custom-header');
+add_theme_support( 'post-formats', array( 'Services' ) );
 
 add_image_size('icon', 50, 50, true);
 
 require get_template_directory() . '/inc/custom_post_types.php';
 
 require get_template_directory() . '/inc/customizer.php';
+
+require get_template_directory() . '/inc/custom_fields.php';

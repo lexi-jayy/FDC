@@ -6,9 +6,11 @@
 
 <?php get_header('full'); ?>
 
+<h1>This is from services-template.php</h1>
+
 <?php
     $args = array(
-        'post_type' => 'post',
+        'post_type' => 'Service',
         'orderby' => 'title'
     );
     $allServices = new WP_Query($args);
@@ -19,7 +21,7 @@
               <div class="col-12">
                   <h2>All of our services</h2>
               </div>
-              <?php while( $$allServices->have_posts() ): $allServices->the_post(); ?>
+              <?php while( $allServices->have_posts() ): $allServices->the_post(); ?>
                   <div class="col-3">
                       <div class="card">
                           <div class="card-body">

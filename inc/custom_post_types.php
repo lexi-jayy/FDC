@@ -28,8 +28,9 @@ function add_services_post_type(){
         'public' => true,
         'show_in_nav_menus' => false,
         'menu_position' => 6,
+        'posts_per_page'=>-1,
         'menu_icon' => 'dashicons-filter',
-        'supports' => array('title', 'thumbnail', 'editor', 'post-formats')
+        'supports' => array('title', 'thumbnail', 'editor', 'post-formats', 'excerpt', 'wp-block-styles')
     );
 
 

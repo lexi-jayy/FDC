@@ -4,14 +4,13 @@
     padding: 0;
   }
 
+.innercon{
+  padding: 40px;
+}
+.custom-footer{
+  padding: 40px;
+}
 
-  #header {
-
-  }
-
-
-
-  .custom-footer{
-    padding-left: 30%;
-    padding-right: 30%;
-  }
+#servicefl{
+  text-align: center;
+}

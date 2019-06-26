@@ -7,7 +7,6 @@
 <?php
     $args = array(
         'post_type' => 'Service',
-        'posts_per_page' => -1,
     );
     $allServices = new WP_Query($args);
 ?>
@@ -19,7 +18,7 @@
                   <h2 id="servicefl">All of our services</h2>
               </div>
               <?php while( $allServices->have_posts() ): $allServices->the_post(); ?>
-                  <div class="col-4">
+                  <div class="col-3">
                       <div class="card">
                           <div class="card-body">
                              <h3 class="card-title"><?php the_title(); ?></h3>

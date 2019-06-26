@@ -16,8 +16,5 @@
                 </div>
                 <hr>
             </div>
-            <?php
-                get_template_part('singlePosts/contentPost-service', get_post_format() );
-            ?>
         <?php endwhile; ?>
     <?php endif; ?>

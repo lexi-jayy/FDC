@@ -56,30 +56,6 @@ function mytheme_customize_register( $wp_customize ) {
         'settings'   => 'custom_text_settings',
     ) ) );
 
-
-
-
-    $wp_customize->add_section( 'image_control_section' , array(
-        'title'      => __( 'Logo Control', 'FDCTheme' ),
-        'priority'   => 30,
-    ) );
-
-    $wp_customize->add_setting( 'image_settings' , array(
-        'default'   => '',
-        'transport' => 'refresh',
-    ) );
-
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'logo',
-            array(
-                'label'      => __( 'Upload a logo', 'FDCTheme' ),
-                'section'    => 'image_control_section',
-                'settings'   => 'image_settings',
-            )
-        )
-    );
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 

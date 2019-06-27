@@ -47,3 +47,6 @@ add_image_size('icon', 50, 50, true);
 require get_template_directory() . '/inc/custom_post_types.php';
 
 require get_template_directory() . '/inc/customizer.php';
+
+require get_template_directory() . '/inc/custom_fields.php';
+

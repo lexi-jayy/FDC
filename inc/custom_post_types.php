@@ -24,7 +24,7 @@ function add_services_post_type(){
 
     $args = array(
         'labels' => $labels,
-        'description' => 'A list of Services that we provide  which will be held in the database',
+        'description' => 'A list of Services that we provide',
         'public' => true,
         'show_in_nav_menus' => false,
         'menu_position' => 6,
@@ -38,3 +38,50 @@ function add_services_post_type(){
 }
 
 add_action('init', 'add_services_post_type');
+
+
+function add_Contact_post_type(){
+    $labels = array(
+        'name' => _x('Contacts', 'post type name', 'FDCTheme'),
+        'singular_name' => _x('Contact', 'post types singluar name', 'FDCTheme'),
+        'add_new_item' => _x('Add New Contact', 'adding new contact', 'FDCTheme')
+    );
+    $args = array(
+        'labels' => $labels,
+        'description' => 'users that want to interact with us that come through our website will be stored here',
+        'public' => true,
+        'menu_position' => 20,
+        'query_var' => true,
+        'menu_icon' => 'dashicons-megaphone',
+        'supports' => array(
+            'title',
+            'editor'
+        ),
+    );
+    register_post_type('Contacts', $args);
+}
+add_action('init', 'add_Contact_post_type');
+
+
+
+function add_Joinus_post_type(){
+    $labels = array(
+        'name' => _x('Join Us', 'post type name', 'FDCTheme'),
+        'singular_name' => _x('Joinus', 'post types singluar name', 'FDCTheme'),
+        'add_new_item' => _x('Add New Joinus', 'adding new Joinus', 'FDCTheme')
+    );
+    $args = array(
+        'labels' => $labels,
+        'description' => 'users that want to become members of our site will send a application form that come through our website will be stored here',
+        'public' => true,
+        'menu_position' => 20,
+        'query_var' => true,
+        'menu_icon' => 'dashicons-megaphone',
+        'supports' => array(
+            'title',
+            'editor'
+        ),
+    );
+    register_post_type('Joinus', $args);
+}
+add_action('init', 'add_Joinus_post_type');

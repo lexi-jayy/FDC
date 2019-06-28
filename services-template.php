@@ -14,7 +14,7 @@
         <?php while( have_posts() ): the_post() ?>
             <div class="row">
                 <div class="col">
-                    <h2><?php the_title(); ?></h2>
+                    <h1 class="title"><?php the_title(); ?></h1>
                 </div>
             </div>
         <hr>

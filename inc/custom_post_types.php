@@ -52,7 +52,7 @@ function add_Contact_post_type(){
         'public' => true,
         'menu_position' => 20,
         'query_var' => true,
-        'menu_icon' => 'dashicons-megaphone',
+        'menu_icon' => 'dashicons-email',
         'supports' => array(
             'title',
             'editor'
@@ -74,9 +74,9 @@ function add_Joinus_post_type(){
         'labels' => $labels,
         'description' => 'users that want to become members of our site will send a application form that come through our website will be stored here',
         'public' => true,
-        'menu_position' => 20,
+        'menu_position' => 21,
         'query_var' => true,
-        'menu_icon' => 'dashicons-megaphone',
+        'menu_icon' => 'dashicons-universal-access',
         'supports' => array(
             'title',
             'editor'
@@ -85,3 +85,48 @@ function add_Joinus_post_type(){
     register_post_type('Joinus', $args);
 }
 add_action('init', 'add_Joinus_post_type');
+
+function add_Login_post_type(){
+    $labels = array(
+        'name' => _x('Login', 'post type name', 'FDCTheme'),
+        'singular_name' => _x('Login', 'post types singluar name', 'FDCTheme'),
+        'add_new_item' => _x('Add New Login', 'adding new Login', 'FDCTheme')
+    );
+    $args = array(
+        'labels' => $labels,
+        'description' => 'members of our site can log in here and the login will be stored',
+        'public' => true,
+        'menu_position' => 22,
+        'query_var' => true,
+        'menu_icon' => 'dashicons-migrate',
+        'supports' => array(
+            'title',
+            'editor'
+        ),
+    );
+    register_post_type('Login', $args);
+}
+add_action('init', 'add_Login_post_type');
+
+
+function add_Support_post_type(){
+    $labels = array(
+        'name' => _x('Supports', 'post type name', 'FDCTheme'),
+        'singular_name' => _x('Support', 'post types singluar name', 'FDCTheme'),
+        'add_new_item' => _x('Add New Support', 'adding new Support', 'FDCTheme')
+    );
+    $args = array(
+        'labels' => $labels,
+        'description' => 'users that want to interact with us that come through our website will be stored here',
+        'public' => true,
+        'menu_position' => 23,
+        'query_var' => true,
+        'menu_icon' => 'dashicons-tickets-alt',
+        'supports' => array(
+            'title',
+            'editor'
+        ),
+    );
+    register_post_type('Supports', $args);
+}
+add_action('init', 'add_Support_post_type');

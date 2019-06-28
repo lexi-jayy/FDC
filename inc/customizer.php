@@ -18,7 +18,28 @@ function mytheme_customize_register( $wp_customize ) {
         'settings' => 'custom_background_colour',
     )));
 
+    $wp_customize->add_setting('card-header_background_colour', array(
+        'default' => '#ffffff',
+        'transport' => 'refresh',
+    ));
 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'card-header_background_control', array(
+        'label' => __( 'Card Header Background Colour', 'FDCTheme'),
+        'section' => 'custom_theme_colour_section',
+        'settings' => 'card-header_background_colour',
+    )));
+
+
+    $wp_customize->add_setting('card-body_background_colour', array(
+        'default' => '#ffffff',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'card-body_background_control', array(
+        'label' => __( 'Card Body Background Colour', 'FDCTheme'),
+        'section' => 'custom_theme_colour_section',
+        'settings' => 'card-body_background_colour',
+    )));
 
     $wp_customize->add_setting( 'navigation_background' , array(
         'default'   => '#ffffff',
@@ -75,6 +96,12 @@ function mytheme_customize_css()
              }
              .custom-footer{
                 background-color: <?php echo get_theme_mod('footer_background', '#ffffff'); ?>;
+             }
+             .card-header{
+                background-color: <?php echo get_theme_mod('card-header_background_colour', '#000000'); ?>;
+             }
+             .card-body{
+                background-color: <?php echo get_theme_mod('card-body_background_colour', '#000000'); ?>;
              }
          </style>
     <?php

@@ -34,7 +34,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1><?php the_title(); ?></h1>
+                <h1 class="title"><?php the_title(); ?></h1>
             </div>
         </div>
         <?php if( have_posts() ): ?>

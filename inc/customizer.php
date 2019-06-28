@@ -88,7 +88,7 @@ function mytheme_customize_css()
     ?>
          <style type="text/css">
              body {
-                 background-color: <?php echo get_theme_mod('custom_background_colour', '#000000'); ?>;
+                 background-color: <?php echo get_theme_mod('custom_background_colour', '#ffffff'); ?>;
                  color: <?php echo get_theme_mod('custom_text_settings', '#000000'); ?>;
              }
              .custom_nav{
@@ -98,10 +98,10 @@ function mytheme_customize_css()
                 background-color: <?php echo get_theme_mod('footer_background', '#ffffff'); ?>;
              }
              .card-header{
-                background-color: <?php echo get_theme_mod('card-header_background_colour', '#000000'); ?>;
+                background-color: <?php echo get_theme_mod('card-header_background_colour', '#ffffff'); ?>;
              }
              .card-body{
-                background-color: <?php echo get_theme_mod('card-body_background_colour', '#000000'); ?>;
+                background-color: <?php echo get_theme_mod('card-body_background_colour', '#ffffff'); ?>;
              }
          </style>
     <?php

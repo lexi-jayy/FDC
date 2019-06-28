@@ -27,7 +27,7 @@ function add_services_post_type(){
         'description' => 'A list of Services that we provide',
         'public' => true,
         'show_in_nav_menus' => false,
-        'menu_position' => 6,
+        'menu_position' => 20,
         'menu_icon' => 'dashicons-filter',
         'taxonomies'  => array( 'category' ),
         'supports' => array('title', 'thumbnail', 'editor', 'post-formats', 'excerpt', 'wp-block-styles')
@@ -111,7 +111,7 @@ add_action('init', 'add_Login_post_type');
 
 function add_Support_post_type(){
     $labels = array(
-        'name' => _x('Supports', 'post type name', 'FDCTheme'),
+        'name' => _x('Support', 'post type name', 'FDCTheme'),
         'singular_name' => _x('Support', 'post types singluar name', 'FDCTheme'),
         'add_new_item' => _x('Add New Support', 'adding new Support', 'FDCTheme')
     );
@@ -119,7 +119,7 @@ function add_Support_post_type(){
         'labels' => $labels,
         'description' => 'users that want to interact with us that come through our website will be stored here',
         'public' => true,
-        'menu_position' => 23,
+        'menu_position' => 21,
         'query_var' => true,
         'menu_icon' => 'dashicons-tickets-alt',
         'supports' => array(

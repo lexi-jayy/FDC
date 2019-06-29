@@ -1,22 +1,33 @@
 <?php get_header('full'); ?>
 
-<h1>This is from our index.php file</h1>
 
+<?php
+    $args = array(
+        'post_type' => 'Service',
+    );
+    $allServices = new WP_Query($args);
+?>
 
-
-<?php if( have_posts() ): ?>
-    <?php while( have_posts() ): the_post() ?>
+<?php if( $allServices->have_posts() ): ?>
         <div class="innercon">
-            <h2><?php the_title(); ?></h2>
-            <div class="content">
-                <?php the_content(); ?>
-            </div>
-            <hr>
+          <div class="row mb-5">
+              <div class="col-12">
+                  <h2 id="servicefl">Our services</h2>
+              </div>
+              <?php while( $allServices->have_posts() ): $allServices->the_post(); ?>
+                  <div class="col-6">
+                      <div class="card">
+                          <div class="card-body">
+                             <h3 class="card-title"><?php the_title(); ?></h3>
+                             <p> <?php the_excerpt(); ?> </p>
+                             <a class="btn btn-warning btn-block" href="<?php the_permalink(); ?>">View Services</a>
+                          </div>
+                      </div>
+                  </div>
+              <?php endwhile; ?>
+          </div>
         </div>
-    <?php endwhile; ?>
-<?php else: ?>
-    <p>There is no post</p>
-<?php endif; ?>
+      <?php endif; ?>
 
 
 

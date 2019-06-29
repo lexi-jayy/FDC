@@ -8,6 +8,7 @@ function add_custom_files(){
     wp_enqueue_script('jquery');
 
     wp_enqueue_script('my_bootstrap_script', get_template_directory_uri() . '/assets/js/bootstrap.js', array(), '4.3.1', true);
+    
 };
 
 add_action('wp_enqueue_scripts', 'add_custom_files');
@@ -17,6 +18,11 @@ function add_admin_styles(){
     wp_enqueue_style('my_admin_styles', get_template_directory_uri() . '/assets/css/admin.css' , array(), '0.1');
 }
 add_action('admin_enqueue_scripts', 'add_admin_styles');
+
+
+
+
+
 
 function register_my_menu() {
     register_nav_menu('header_menu','The menu which appears at the top of the page');
@@ -31,7 +37,7 @@ require_once get_template_directory() . '/assets/class-wp-bootstrap-navwalker.ph
 
 //default block styles needed for gutenberg editor
 add_theme_support('wp-block-styles');
-
+add_theme_support( 'custom-logo' );
 add_theme_support('post-thumbnails');
 add_theme_support( 'custom-header');
 

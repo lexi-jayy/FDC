@@ -76,9 +76,9 @@ function mytheme_customize_register( $wp_customize ) {
         'section'    => 'custom_theme_colour_section',
         'settings'   => 'custom_text_settings',
     ) ) );
-
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
+
 
 
 

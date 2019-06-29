@@ -6,9 +6,6 @@
 
 <?php get_header('full'); ?>
 
-<h1>This is from services-template.php</h1>
-
-
 
       <?php if( have_posts() ): ?>
         <?php while( have_posts() ): the_post() ?>
